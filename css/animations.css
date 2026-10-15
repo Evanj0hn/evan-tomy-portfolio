@@ -1,0 +1,64 @@
+/* ==========================================================================
+   Keyframes, scroll-reveal system, and reduced-motion handling
+   ========================================================================== */
+
+/* Scroll reveal (activated via IntersectionObserver in js/animations.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .7s cubic-bezier(.4,0,.2,1), transform .7s cubic-bezier(.4,0,.2,1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -22px) scale(1.06); }
+  66% { transform: translate(-24px, 18px) scale(0.95); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes scrollWheel {
+  0% { opacity: 1; top: 6px; }
+  70% { opacity: 0; top: 20px; }
+  100% { opacity: 0; top: 6px; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.toast.visible {
+  animation: popIn .3s cubic-bezier(.4,0,.2,1);
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-canvas { display: none; }
+}

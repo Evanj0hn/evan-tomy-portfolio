@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Design tokens — fonts, spacing, radii, shadows, and light/dark theme colors
+   ========================================================================== */
+
+:root {
+  /* Fonts */
+  --font-heading: 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  /* Accent — consistent across both themes */
+  --accent: #3b82f6;
+  --accent-2: #22d3ee;
+  --accent-rgb: 59, 130, 246;
+  --accent-2-rgb: 34, 211, 238;
+  --accent-gradient: linear-gradient(135deg, var(--accent), var(--accent-2));
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 999px;
+
+  --container-width: 1180px;
+  --header-height: 88px;
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-base: 280ms cubic-bezier(.4,0,.2,1);
+  --transition-slow: 550ms cubic-bezier(.4,0,.2,1);
+
+  /* Shadows (color is theme-dependent via --shadow-color) */
+  --shadow-sm: 0 1px 2px rgba(var(--shadow-color), .14);
+  --shadow-md: 0 8px 24px rgba(var(--shadow-color), .16);
+  --shadow-lg: 0 20px 60px rgba(var(--shadow-color), .30);
+
+  --z-header: 100;
+  --z-mobile-menu: 90;
+  --z-toast: 300;
+}
+
+[data-theme="dark"] {
+  --bg: #0a0e16;
+  --bg-alt: #0d1220;
+  --surface: #121828;
+  --surface-alt: #161d30;
+  --border: #232b40;
+  --text: #e8ebf3;
+  --text-muted: #9aa2b8;
+  --text-faint: #5a6376;
+  --shadow-color: 0, 0, 0;
+  --header-bg: rgba(10, 14, 22, 0.72);
+  --scrollbar-track: #10151f;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #fbfcfe;
+  --bg-alt: #f2f5fa;
+  --surface: #ffffff;
+  --surface-alt: #f3f6fb;
+  --border: #e3e8f0;
+  --text: #10182a;
+  --text-muted: #4c5773;
+  --text-faint: #8891a6;
+  --shadow-color: 15, 23, 42;
+  --header-bg: rgba(251, 252, 254, 0.78);
+  --scrollbar-track: #eef1f6;
+  color-scheme: light;
+}

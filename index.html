@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  (function () {
+    var stored = localStorage.getItem('portfolio-theme');
+    var theme = (stored === 'light' || stored === 'dark') ? stored : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evan John Tomy — Computer Science Student &amp; Developer</title>
+<meta name="description" content="Portfolio of Evan John Tomy, a Computer Science (Honours) student at Conestoga College with hands-on experience in data engineering, systems administration, and embedded/IoT development.">
+<meta name="author" content="Evan John Tomy">
+<meta name="color-scheme" content="dark light">
+
+<meta property="og:title" content="Evan John Tomy — Computer Science Student &amp; Developer">
+<meta property="og:description" content="Data engineering, systems administration, embedded IoT and game projects — built by a Computer Science (Honours) student at Conestoga College.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/social-preview.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<noscript><style>.reveal{opacity:1 !important;transform:none !important;}.hero-canvas{display:none !important;}</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Icon sprite -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z"/></symbol>
+  <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V10.5H5.67v7.84h2.67zM7 9.4a1.56 1.56 0 1 0 0-3.12 1.56 1.56 0 0 0 0 3.12zM18.34 18.34v-4.3c0-2.3-1.23-3.37-2.87-3.37a2.48 2.48 0 0 0-2.25 1.24h-.03V10.5h-2.56c.03.7 0 7.84 0 7.84h2.56v-4.38c0-.23.02-.47.09-.64.2-.47.64-.96 1.38-.96.98 0 1.37.74 1.37 1.83v4.15h2.31z"/></symbol>
+  <symbol id="icon-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></symbol>
+  <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+  <symbol id="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+  <symbol id="icon-arrow-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="icon-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+  <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+</svg>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="Evan Tomy, back to top">
+      <span class="logo-mark">ET</span>
+      <span class="logo-text">Evan Tomy</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="icon icon-sun"><use href="#icon-sun"></use></svg>
+        <svg class="icon icon-moon"><use href="#icon-moon"></use></svg>
+      </button>
+      <a class="btn btn-outline btn-sm resume-btn" href="assets/Evan-John-Tomy-Resume.pdf" download>Résumé</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-nav-list">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="assets/Evan-John-Tomy-Resume.pdf" class="nav-link" download>Download Résumé</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <canvas id="particle-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-pattern" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <p class="eyebrow reveal">Hi, my name is</p>
+      <h1 class="hero-name reveal">Evan John Tomy</h1>
+      <h2 class="hero-role reveal"><span id="typing-text"></span><span class="typing-cursor" aria-hidden="true"></span></h2>
+      <p class="hero-summary reveal">
+        Computer Science (Honours) student at Conestoga College who builds across the stack — from embedded
+        systems and data pipelines to full games and web interfaces. Co-founder of ConHacks, Conestoga's
+        first student-run hackathon.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-socials reveal">
+        <a href="https://github.com/Evanj0hn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="social-icon">
+          <svg class="icon icon--brand"><use href="#icon-github"></use></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/evantomy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="social-icon">
+          <svg class="icon icon--brand"><use href="#icon-linkedin"></use></svg>
+        </a>
+        <a href="mailto:evanjohntomyy@gmail.com" aria-label="Send an email" class="social-icon">
+          <svg class="icon"><use href="#icon-mail"></use></svg>
+        </a>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+      <span class="scroll-mouse"><span class="scroll-wheel"></span></span>
+    </a>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="container">
+      <p class="section-eyebrow reveal">About Me</p>
+      <h2 class="section-title reveal">A little about my journey</h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I like working across the stack — low-level enough to configure a microcontroller or read a Wireshark
+            capture, and high-level enough to ship a Flask API or a Godot game. That range comes from a mix of
+            classwork and hands-on roles that kept pointing me at different layers of the same problem: how do you
+            take messy, real-world input and turn it into something reliable?
+          </p>
+          <p>
+            Outside the classroom, I co-founded <strong>ConHacks</strong>, Conestoga College's first student-run
+            hackathon, and I've worked as a contract data engineer cleaning diagnostic lab data and as a systems
+            intern supporting IT operations for a global team. I'm currently pursuing a Bachelor of Computer
+            Science (Honours) at Conestoga College.
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Work &amp; Co-op Roles</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Featured Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="6">0</span>
+            <span class="stat-label">Skill Categories</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-target="2023">0</span>
+            <span class="stat-label">ConHacks Founded</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section skills" id="skills">
+    <div class="container">
+      <p class="section-eyebrow reveal">Skills</p>
+      <h2 class="section-title reveal">Technical toolbox</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h3>Programming</h3>
+          <div class="tag-list">
+            <span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span>
+            <span class="tag">JavaScript (ES6+)</span><span class="tag">OOP</span><span class="tag">Functional Programming</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Embedded &amp; Signal Processing</h3>
+          <div class="tag-list">
+            <span class="tag">Microcontrollers</span><span class="tag">RTOS Concepts</span>
+            <span class="tag">FFT</span><span class="tag">Digital Filtering</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Connectivity</h3>
+          <div class="tag-list">
+            <span class="tag">Bluetooth LE</span><span class="tag">Wi-Fi</span><span class="tag">IoT Protocols</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Tools &amp; Platforms</h3>
+          <div class="tag-list">
+            <span class="tag">Linux</span><span class="tag">Windows</span><span class="tag">Visual Studio</span>
+            <span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Wireshark</span>
+            <span class="tag">Arduino</span><span class="tag">Godot</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Security &amp; Testing</h3>
+          <div class="tag-list">
+            <span class="tag">Application Security</span><span class="tag">Vulnerability Assessment</span>
+            <span class="tag">Pytest</span><span class="tag">Unit &amp; Integration Testing</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Development Practices</h3>
+          <div class="tag-list">
+            <span class="tag">Agile</span><span class="tag">CI/CD</span><span class="tag">GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section experience" id="experience">
+    <div class="container">
+      <p class="section-eyebrow reveal">Experience</p>
+      <h2 class="section-title reveal">Where I've worked</h2>
+
+      <div class="timeline">
+        <div class="timeline-line" aria-hidden="true"><span class="timeline-line-fill"></span></div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Sep 2023 — Present</span>
+            <h3>Co-Founder &amp; Executive Lead</h3>
+            <p class="timeline-org">ConHacks · Waterloo, ON</p>
+            <ul>
+              <li>Co-founded and led organization of Conestoga College's first-ever yearly hackathon, drawing participants from multiple disciplines and building a collaborative tech community</li>
+              <li>Directed event planning, logistics, and sponsor outreach for a full-day event featuring technical workshops, keynote speakers, and judging panels</li>
+              <li>Collaborated with a team of peers to design and manage the event website, registration system, and promotional materials</li>
+              <li>Led high-pressure planning sessions and live event execution with a focus on clear, fast decision-making</li>
+              <li>Fostered team dynamics and cross-functional collaboration through regular meetings, task delegation, and feedback loops</li>
+              <li>Helped create an inclusive, supportive environment for attendees, mentors, and judges</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">May 2025 — Jul 2025</span>
+            <h3>Contract Data Engineer (Co-op)</h3>
+            <p class="timeline-org">Afynia Laboratories · Hamilton, ON</p>
+            <ul>
+              <li>Built and optimized ETL pipelines to clean and transform PCR diagnostic data from Excel/CSV into a MySQL database</li>
+              <li>Implemented QC checks in Python/pandas to flag undetermined Cq values, low-confidence markers, and failed hemolysis</li>
+              <li>Used regex and fuzzy string matching (RapidFuzz) to unify inconsistent patient/sample IDs across input formats</li>
+              <li>Generated and maintained unique Afynia IDs for biospecimen traceability across patient visits</li>
+              <li>Documented data workflows and built simple output templates for non-technical wet lab staff</li>
+              <li>Collaborated cross-functionally with lab, bioinformatics, and research teams to maintain data integrity</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Sep 2025 — Dec 2025</span>
+            <h3>System Intern (Co-op)</h3>
+            <p class="timeline-org">HTIC Global · Remote — Kochi, India</p>
+            <ul>
+              <li>Supported the System Administration team with installation, configuration, and maintenance of hardware and software</li>
+              <li>Troubleshot desktop, network, and system issues under senior IT staff guidance, improving uptime</li>
+              <li>Handled user account management: creation, permission updates, and access-rights maintenance per security policy</li>
+              <li>Monitored system performance, flagged irregularities, and escalated issues to maintain smooth operations</li>
+              <li>Wrote clear documentation for troubleshooting steps, system updates, and internal IT procedures</li>
+              <li>Worked with cross-functional teams via daily check-ins and written technical reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section projects" id="projects">
+    <div class="container">
+      <p class="section-eyebrow reveal">Projects</p>
+      <h2 class="section-title reveal">Things I've built</h2>
+
+      <div class="projects-grid">
+        <article class="project-card reveal">
+          <div class="project-media"><img src="images/projects/fox-run.svg" alt="Stylized illustration for the Fox Run platformer game" loading="lazy" width="400" height="300"></div>
+          <div class="project-body">
+            <h3>Fox Run</h3>
+            <p class="project-tags">Godot Engine · GDScript · Pixel Art · Game Design</p>
+            <p class="project-desc">A 2D side-scrolling platformer starring an adventurous fox exploring two distinct biomes, built solo as a college project.</p>
+            <button class="project-toggle" type="button" aria-expanded="false">
+              <span>View details</span>
+              <svg class="icon"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Developed a 2D side-scrolling platformer in Godot Engine as a solo project</li>
+                <li>Implemented interactive mechanics: collectible cherries, health-restoring gems, and enemy encounters with frogs, opossums, and eagles</li>
+                <li>Designed two thematic zones — a lush green forest and a darker, mysterious area — to build player immersion</li>
+                <li>Built real-time UI for health, gold, and gameplay status using GDScript</li>
+                <li>Optimized sprites, level design, and collision systems for smooth performance</li>
+                <li>Published the project on GitHub with open-source contribution guidelines</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-media"><img src="images/projects/camsentinel.svg" alt="Stylized illustration for the CamSentinel smart security camera project" loading="lazy" width="400" height="300"></div>
+          <div class="project-body">
+            <h3>CamSentinel</h3>
+            <p class="project-tags">Python · OpenCV · HTML/CSS · Arduino</p>
+            <p class="project-desc">A smart security camera system combining computer vision with live environmental sensor data.</p>
+            <button class="project-toggle" type="button" aria-expanded="false">
+              <span>View details</span>
+              <svg class="icon"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Built a smart security camera system with real-time motion detection, face detection, and intruder alerts</li>
+                <li>Integrated environmental sensors to show live temperature and pressure data alongside the video feed</li>
+                <li>Combined hardware and software into a multifunctional security tool for home or office use</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-media"><img src="images/projects/house-price-predictor.svg" alt="Stylized illustration for the House Price Predictor machine learning project" loading="lazy" width="400" height="300"></div>
+          <div class="project-body">
+            <h3>House Price Predictor</h3>
+            <p class="project-tags">Python · scikit-learn · pandas · seaborn · NumPy</p>
+            <p class="project-desc">A regression pipeline that predicts house prices from the Kaggle housing dataset, from EDA through model tuning.</p>
+            <button class="project-toggle" type="button" aria-expanded="false">
+              <span>View details</span>
+              <svg class="icon"><use href="#icon-chevron-down"></use></svg>
+            </button>
+            <div class="project-details">
+              <ul>
+                <li>Built a regression model to predict house prices using the Kaggle housing dataset</li>
+                <li>Performed exploratory data analysis and visualized correlations between area, room count, and location</li>
+                <li>Engineered features and handled missing values, outliers, and skewed distributions with pandas and NumPy</li>
+                <li>Trained and tuned Linear Regression, Ridge, Lasso, and Gradient Boosting models with cross-validation</li>
+                <li>Began deploying the model behind a Flask API with an interactive HTML/CSS front end</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="projects-more reveal">More on <a href="https://github.com/Evanj0hn" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon icon-inline"><use href="#icon-external"></use></svg></a></p>
+    </div>
+  </section>
+
+  <section class="section education" id="education">
+    <div class="container">
+      <p class="section-eyebrow reveal">Education</p>
+      <h2 class="section-title reveal">Academic background</h2>
+
+      <div class="education-card reveal">
+        <div class="education-info">
+          <h3>Bachelor of Computer Science (Honours)</h3>
+          <p class="edu-org">Conestoga College · Waterloo, ON</p>
+        </div>
+        <span class="edu-date">Jan 2023 — Present</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="section-eyebrow reveal">Contact</p>
+      <h2 class="section-title reveal">Let's build something together</h2>
+      <p class="contact-intro reveal">Have a role, a project, or just a question? My inbox is open.</p>
+
+      <div class="contact-grid">
+        <div class="contact-cards reveal">
+          <button class="contact-card" id="copy-email" type="button" data-email="evanjohntomyy@gmail.com">
+            <svg class="icon"><use href="#icon-mail"></use></svg>
+            <span class="contact-card-text">
+              <span class="contact-card-label">Email</span>
+              <span class="contact-card-value">evanjohntomyy@gmail.com</span>
+            </span>
+            <svg class="icon icon-copy-hint"><use href="#icon-copy"></use></svg>
+          </button>
+
+          <a class="contact-card" href="tel:+15195039020">
+            <svg class="icon"><use href="#icon-phone"></use></svg>
+            <span class="contact-card-text">
+              <span class="contact-card-label">Phone</span>
+              <span class="contact-card-value">519-503-9020</span>
+            </span>
+          </a>
+
+          <a class="contact-card" href="https://www.linkedin.com/in/evantomy" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon--brand"><use href="#icon-linkedin"></use></svg>
+            <span class="contact-card-text">
+              <span class="contact-card-label">LinkedIn</span>
+              <span class="contact-card-value">linkedin.com/in/evantomy</span>
+            </span>
+          </a>
+
+          <a class="contact-card" href="https://github.com/Evanj0hn" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon--brand"><use href="#icon-github"></use></svg>
+            <span class="contact-card-text">
+              <span class="contact-card-label">GitHub</span>
+              <span class="contact-card-value">github.com/Evanj0hn</span>
+            </span>
+          </a>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Your email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-hint">This opens your email client with the message pre-filled — nothing is sent from this page directly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-text">© <span id="year"></span> Evan John Tomy. Built with HTML, CSS &amp; JavaScript.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/Evanj0hn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg class="icon icon--brand"><use href="#icon-github"></use></svg></a>
+      <a href="https://www.linkedin.com/in/evantomy" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><svg class="icon icon--brand"><use href="#icon-linkedin"></use></svg></a>
+      <a href="mailto:evanjohntomyy@gmail.com" aria-label="Send an email"><svg class="icon"><use href="#icon-mail"></use></svg></a>
+    </div>
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+      <svg class="icon"><use href="#icon-arrow-up"></use></svg>
+    </button>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/theme.js" defer></script>
+<script src="js/navigation.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/interactions.js" defer></script>
+</body>
+</html>

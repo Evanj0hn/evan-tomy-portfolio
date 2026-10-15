@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Responsive breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-stats { max-width: 480px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form { max-width: 560px; }
+}
+
+@media (max-width: 860px) {
+  .nav-desktop { display: none; }
+  .menu-toggle { display: flex; }
+  .resume-btn { display: none; }
+}
+
+@media (max-width: 640px) {
+  :root { --header-height: 76px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { width: 100%; }
+  .education-card { flex-direction: column; align-items: flex-start; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .section { padding: var(--space-8) 0; }
+  .hero-blob-1, .hero-blob-2 { width: 260px; height: 260px; }
+}
+
+@media (max-width: 420px) {
+  .about-stats { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  .logo-text { display: none; }
+}
